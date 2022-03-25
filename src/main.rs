@@ -48,7 +48,7 @@ enum CleanCommands {
     Shaders,
 
     /// Delete user folder
-    UserFolder(Environment),
+    Userfolder(Environment),
 }
 
 #[derive(Debug, Parser)]
@@ -72,7 +72,7 @@ fn main() -> Result<(), UtilError> {
 
 fn clean(command: CleanCommands) -> Result<(), UtilError> {
     match command {
-        CleanCommands::UserFolder(e) => delete_user_folder(&e.environment)?,
+        CleanCommands::Userfolder(e) => delete_user_folder(&e.environment)?,
         CleanCommands::Shaders => delete_shaders()?,
     }
 
