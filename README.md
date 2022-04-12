@@ -27,7 +27,14 @@ It only saves a little bit of time, but if you do it frequently, that time can a
 ## How to use
 NOTE: As of 3.17, this first step is only required for managing the `USER` folder and creating an option fresh `USER.cfg` file, as the shader cache was moved to `appdata/local`.
 
-### 1. Configure the root Star Citizen install location
+### 1. Installation
+Compile from source if you have the Rust compiler installed:
+```
+cargo install --git https://github.com/devnought/sc-util
+```
+Or download the binary in the [Releases](https://github.com/devnought/sc-util/releases) section, and place it somewhere that's visible to your `PATH`.
+
+### 2. Configure the root Star Citizen install location
 Run the command `scu config set <PATH-TO-STAR-CITIZEN-ROOT>`
 ```
 scu config set "C:\Program Files\Roberts Space Industries\StarCitizen"
@@ -41,7 +48,7 @@ C:\Program Files\Roberts Space Industries\StarCitizen
 
 This will become the base directory where commands will look for your `LIVE` or `PTU` folders.
 
-### 2. Get cleaning!
+### 3. Get cleaning!
 Cleaning is split across two commands for `shaders` and the `userfolder`:
 ```
 scu clean shaders
@@ -51,7 +58,7 @@ scu clean userfolder <ENVIRONMENT>
 ````
 Where `<ENVIRONMENT>` can be `PTU` or `LIVE`.
 
-### 3. Creating a `USER.cfg` file
+### 4. Creating a `USER.cfg` file
 While testing on the PTU, it's handy to always see the `SessionInfo` QR code, along with performance information. If you want those to be displayed by default, the relevant display commands can be added to this file.
 
 If you don't want to create one by hand, I got you covered:
