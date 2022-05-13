@@ -9,11 +9,11 @@ path = "src/main.rs"
 
 [dependencies]
 app_dirs2 = "2.4.0"
-clap = { version = "3.1.12", features = ["derive"] }
+clap = { version = "3.1.18", features = ["derive"] }
 fs_extra = "1.2.0"
 normpath = "0.3.2"
-serde = { version = "1.0.136 ", features = ["derive"] }
-serde_json = "1.0.79"
+serde = { version = "1.0.137 ", features = ["derive"] }
+serde_json = "1.0.81"
 
 [profile.release]
 lto = "fat"
