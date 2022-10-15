@@ -4,28 +4,28 @@ use clap::{Parser, Subcommand};
 use sc_util::*;
 
 #[derive(Debug, Parser)]
-#[clap(author, version, about)]
+#[command(author, version, about)]
 enum Args {
     /// Clear user folder or shaders
     Clean {
-        #[clap(subcommand)]
+        #[command(subcommand)]
         command: CleanCommands,
     },
 
     /// Configure Star Citizen root path
     Config {
-        #[clap(subcommand)]
+        #[command(subcommand)]
         command: ConfigCommands,
     },
 
     /// Create fresh user config file
     CreateCfg {
         /// LIVE, PTU
-        #[clap(long, short)]
+        #[arg(long, short)]
         environment: String,
 
         /// Overwrite cfg, if one exists.
-        #[clap(long, short)]
+        #[arg(long, short)]
         overwrite: bool,
     },
 }

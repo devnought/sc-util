@@ -22,7 +22,6 @@ pub enum UtilError {
     Message(Cow<'static, str>),
     IoError(io::Error),
     Json(serde_json::error::Error),
-    FsExtra(fs_extra::error::Error),
 }
 
 impl Error for UtilError {}
@@ -33,7 +32,6 @@ impl Display for UtilError {
             Self::ConfigPath(e) => e.fmt(f),
             Self::IoError(e) => e.fmt(f),
             Self::Json(e) => e.fmt(f),
-            Self::FsExtra(e) => e.fmt(f),
         }
     }
 }
@@ -65,12 +63,6 @@ impl From<io::Error> for UtilError {
 impl From<serde_json::error::Error> for UtilError {
     fn from(e: serde_json::error::Error) -> Self {
         Self::Json(e)
-    }
-}
-
-impl From<fs_extra::error::Error> for UtilError {
-    fn from(e: fs_extra::error::Error) -> Self {
-        Self::FsExtra(e)
     }
 }
 
@@ -162,7 +154,7 @@ pub fn delete_shaders() -> Result<(), UtilError> {
     .collect::<PathBuf>();
 
     if local_shader_path_root.exists() {
-        fs_extra::dir::remove(local_shader_path_root)?;
+        fs::remove_dir_all(local_shader_path_root)?;
     }
 
     Ok(())
@@ -178,7 +170,7 @@ pub fn delete_user_folder(environment: &str) -> Result<(), UtilError> {
     .collect::<PathBuf>();
 
     if user_path.exists() {
-        fs_extra::dir::remove(user_path)?;
+        fs::remove_dir_all(user_path)?;
     }
 
     Ok(())
