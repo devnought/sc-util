@@ -131,7 +131,7 @@ pub fn set_config(root_path: &Path) -> Result<(), UtilError> {
     if !config_path.exists() {
         let p = &config_path
             .parent()
-            .ok_or(UtilError::Message("Cannot determine user path".into()))?;
+            .ok_or_else(|| UtilError::Message("Cannot determine user path".into()))?;
         fs::create_dir_all(p)?;
     }
 
