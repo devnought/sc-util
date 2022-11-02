@@ -19,7 +19,7 @@ SUBCOMMANDS:
 ```
 
 ## Why was this created?
-To simmplify cleaning up your shader/user folders for multiple environemnts, without having to navigate to those respective locations to do so.
+To simplify cleaning up your shader/user folders for multiple environemnts, without having to navigate to those respective locations to do so.
 
 It only saves a little bit of time, but if you do it frequently, that time can add up. Only you can decide if it's worthwhile.
 
