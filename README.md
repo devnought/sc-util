@@ -25,7 +25,7 @@ It only saves a little bit of time, but if you do it frequently, that time can a
 
 
 ## How to use
-NOTE: As of 3.17, this first step is only required for managing the `USER` folder and creating an option fresh `USER.cfg` file, as the shader cache was moved to `appdata/local`.
+*NOTE:* As of 3.17, this first step is only required for managing the `USER` folder and creating a fresh `USER.cfg` file, as the shader cache was moved to `appdata/local`.
 
 ### 1. Installation
 Compile from source if you have the Rust compiler installed:
