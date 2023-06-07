@@ -8,11 +8,11 @@ name = "scu"
 path = "src/main.rs"
 
 [dependencies]
-app_dirs2 = "2.5.4"
-clap = { version = "4.0.29", features = ["derive"] }
-normpath = "1.0.0"
-serde = { version = "1.0.150 ", features = ["derive"] }
-serde_json = "1.0.89"
+app_dirs2 = "2.5.5"
+clap = { version = "4.3.2", features = ["derive"] }
+normpath = "1.1.1"
+serde = { version = "1.0.163 ", features = ["derive"] }
+serde_json = "1.0.96"
 
 [profile.release]
 lto = "fat"
